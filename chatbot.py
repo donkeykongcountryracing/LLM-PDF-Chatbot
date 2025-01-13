@@ -36,7 +36,7 @@ def pdf_to_documents(pdf_path):
 api_key_found = False
 if hasattr(st, "secrets"):
     if "COHERE_API_KEY" in st.secrets.keys():
-        if st.secrets["COHERE_API_KEY"] not in ["", "PASTE YOUR API KEY HERE"]:
+        if st.secrets["COHERE_API_KEY"] not in ["", "4D7UmoRHr0pz1ZMCgbSTNOII3zb90bLOs1BLPFAt"]:
             api_key_found = True
 
 # Add a sidebar to the Streamlit app
