@@ -116,8 +116,16 @@ import os
 import textwrap
 import json
 
+with st.sidebar:
+    if api_key_found:
+        cohere_api_key = st.secrets["COHERE_API_KEY"]
+        # st.write("API key found.")
+    else:
+        cohere_api_key = st.text_input("Cohere API Key", key="chatbot_api_key", type="password")
+        st.markdown("[Get a Cohere API Key](https://dashboard.cohere.ai/api-keys)")
+    
 # Set up Cohere client
-co = cohere.ClientV2("COHERE_API_KEY") # Get your free API key: https://dashboard.cohere.com/api-keys
+# co = cohere.ClientV2("COHERE_API_KEY") # Get your free API key: https://dashboard.cohere.com/api-keys
 
 def generate_idea(industry, temperature):
     
